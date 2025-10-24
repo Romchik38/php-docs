@@ -33,7 +33,10 @@ $a + $b
 
 ### Функції
 
-array_merge - string keys перезаписуються, індекси додаються
+- array_intersect       - значення, які є в масивах.
+- array_intersect_assoc - з ключами.
+- array_merge           - string keys перезаписуються, індекси додаються
+- array_unique          - унікальні значення
 
 ## Порівняння
 
@@ -50,3 +53,10 @@ List (packed array)         послідовні ключи
 Hash (mixed array)          Рядкові або непослідовні ключі
 
 List швидший і меньше пам'яті.
+
+## Вказівник
+
+- current
+- next
+- prev
+- reset

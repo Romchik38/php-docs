@@ -2,6 +2,7 @@
 
 - OpenTelemetry - metrics, logs, and traces
 - області видимості об'єктів PHP
+- двосвязний список `SplDoublyLinkedList`
 
 ## OpenTelemetry
 
