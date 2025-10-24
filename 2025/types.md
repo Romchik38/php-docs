@@ -16,7 +16,6 @@
 - void
 - self, parent, static
 
-[!] Не зрозуміло
- Singleton types
+- Singleton types
     false
     true
