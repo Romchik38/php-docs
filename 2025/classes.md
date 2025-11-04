@@ -19,16 +19,31 @@
 
 ### Visavility
 
-- коваріантність      допускається більш загальна зміна    (`private` to `public`)
-- контрваріантність   допускається більш конкрентна зміна  (`public` to `private`)
+- коваріантність      допускається більш конкрентна зміна  (`public` to `private`)
+- контрваріантність   допускається більш загальна зміна    (`private` to `public`)
 
-| member                                                     |  type     |
-|------------------------------------------------------------|-----------|
-| class                                                      |           |
-| [property visiblity](./classes/variance/01_property.php)           |  ков      |
-| [methods visiblity](./classes/variance/02_method.php)              |  ков      |
+| member                                                             |  type     |
+|--------------------------------------------------------------------|-----------|
+| class                                                              |           |
+| [property visiblity](./classes/variance/01_property.php)           |  кон      |
+| [methods visiblity](./classes/variance/02_method.php)              |  кон      |
 | [__construct visiblity](./classes/variance/03_method_construct.php)|  ков/кон  |
-| constants visiblity                                        |  ков      |
+| constants visiblity                                                |  кон      |
+
+### Types
+
+- коваріантність      допускається більш конкрентна зміна
+- контрваріантність   допускається більш загальна зміна
+- інварінтність       не допускається зміна
+
+| member                                                             |  type     |
+|--------------------------------------------------------------------|-----------|
+| class                                                              |           |
+| function param                                                     |  кон      |
+| function return                                                    |  ков      |
+| propery                                                            |  інв      |
+| propery hook only get                                              |  ков      |
+| propery hook only set                                              |  кон      |
 
 ## Static
 
