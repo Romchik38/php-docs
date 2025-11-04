@@ -7,6 +7,7 @@
 - interface
 - traits
 - overloading
+- lazy
 
 ## Visibility
 
@@ -86,3 +87,15 @@ Dynamic:
 - [method](./classes/overloading/01_method.php)
 - static method
 - property
+
+## Lazy
+
+New in 8.4.
+
+- Ghost Objects
+- Virtual Proxies
+
+Використовується клиси:
+
+- `ReflectionClass::newLazyGhost()`
+- `ReflectionClass::newLazyProxy()`
