@@ -4,22 +4,22 @@ declare(strict_types=1);
 
 class A
 {
+    public string $data;
+
     public function __construct(
         public int $numb
-    ) {   
-    }
-
-    public function incNumb(): void
-    {
-        $this->numb++;
+    ) {
+        $fp = fopen(__FILE__, 'r');
+        $this->data = fread($fp, 1024);
+        fclose($fp);
     }
 }
 
 echo 'Before create: ' . memory_get_usage(true) / 1_000_000 . PHP_EOL;
 
-$arr = new SplFixedArray(1_000_00);
+$arr = new SplFixedArray(1_000_0);
 
-for ($i = 0; $i < 1_000_00; $i++) {
+for ($i = 0; $i < 1_000_0; $i++) {
     $arr[$i] = (
         (new ReflectionClass(A::class))->newLazyGhost(
             function (A $object) {
@@ -32,7 +32,11 @@ for ($i = 0; $i < 1_000_00; $i++) {
 echo 'After create: ' . memory_get_usage(true) / 1_000_000 . PHP_EOL;
 
 foreach($arr as $obj) {
-    $obj->incNumb();
+    $obj->data;
 }
 
-echo 'After increment: ' . memory_get_usage(true) / 1_000_000 . PHP_EOL;
+echo 'After data access: ' . memory_get_usage(true) / 1_000_000 . PHP_EOL;
+
+// Before create: 2.097152
+// After create: 8.388608
+// After data access: 20.97152
